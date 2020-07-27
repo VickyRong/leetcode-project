@@ -15,18 +15,12 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-    // let number = [];
-    // for(var i = 0; i < nums.length; i++){
-    //     for(var j = i + 1 ; j < nums.length; j++ ){
-    //         if(nums[i] + nums[j] == target){
-    //             number.push(i,j);
-    //             console.log(number)
-    //             return number;
-    //         }
-    //     }
-    // }
     for(var i = 0; i < nums.length; i++){
-        for(var j = i + 1; j < nums.length; j++){  //j的初始值是 j=i+1,而不是j=1
+        /*j的初始值是 j=i+1,而不是j=1,不然j每次都要从1开始遍历，
+        **其实在i层循环就已经比较过了，所以j从i后面的之i+1开始就行
+        *这样做是因为题目要求（数组中同一个元素不能使用两遍），也是提高遍历效率
+        */
+        for(var j = i + 1; j < nums.length; j++){  
             if(nums[i] + nums[j] == target){
                 console.log([i,j])
                 return [i,j]
