@@ -34,7 +34,7 @@ var longestCommonPrefix = function(strs) {
     return ""
   }
   var comp = strs[0];
-  for(var i = 1; i < strs.length; i++){
+  for(var i = 1; i < strs.length; i++){ //从第二项开始比较 第一项已经作为参照项
     for(var j = 0; j < strs[i].length && j < comp.length; j++){
        if(strs[i][j] != comp[j]){
           break;
@@ -43,8 +43,8 @@ var longestCommonPrefix = function(strs) {
     comp = comp.substr(0,j)
       if(comp === ''){
         return comp;
+      }
     }
-  }
   return comp;
 };
 
