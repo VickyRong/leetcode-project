@@ -22,7 +22,6 @@ var twoSum = function(nums, target) {
         */
         for(var j = i + 1; j < nums.length; j++){  
             if(nums[i] + nums[j] == target){
-                console.log([i,j])
                 return [i,j]
             }
         }
